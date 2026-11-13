@@ -23,12 +23,12 @@
 <meta property="og:image" content="https://newbuddygames.com/assets/img/og/newbuddy-games-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="NewBuddy Games: Small games. Big feel. Featuring Tunnel Rider and Focus Circles.">
+<meta property="og:image:alt" content="NewBuddy Games: Small games. Big feel. Featuring Tunnel Rider.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NewBuddy Games | Independent Mobile Game Studio">
 <meta name="twitter:description" content="Discover NewBuddy Games, an independent mobile game studio creating polished Android and mobile arcade experiences. Explore Tunnel Rider and upcoming games.">
 <meta name="twitter:image" content="https://newbuddygames.com/assets/img/og/newbuddy-games-og.jpg">
-<meta name="twitter:image:alt" content="NewBuddy Games: Small games. Big feel. Featuring Tunnel Rider and Focus Circles.">
+<meta name="twitter:image:alt" content="NewBuddy Games: Small games. Big feel. Featuring Tunnel Rider.">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
 {
@@ -117,8 +117,11 @@
   }
 
   /* games */
-  .games { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 20px; margin-top: 40px; }
-  @media (max-width: 860px) { .games { grid-template-columns: 1fr; } }
+  .games { margin-top: 40px; }
+  .games .game { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: stretch; }
+  .games .game .art { border-bottom: 0; border-right: 1px solid var(--line); display: flex; align-items: center; background: #0E4FB5; }
+  .games .game .body { align-content: center; }
+  @media (max-width: 860px) { .games .game { grid-template-columns: 1fr; } .games .game .art { border-right: 0; border-bottom: 1px solid var(--line); } }
   .game { display: flex; flex-direction: column; }
   .game .art { display: block; overflow: hidden; border-bottom: 1px solid var(--line); }
   .game .art img { width: 100%; transition: scale .6s; }
@@ -166,7 +169,6 @@
       <ul>
         <li><a href="/games/">Games</a></li>
         <li><a href="/games/tunnel-rider/">Tunnel Rider</a></li>
-        <li><a href="/games/focus-circles/">Focus Circles</a></li>
         <li><a href="/#studio">Studio</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
@@ -184,9 +186,8 @@
         <a class="btn btn-primary" href="/games/tunnel-rider/">Explore Tunnel Rider</a>
         <a class="btn btn-ghost" href="/games/">See all games</a>
       </div>
-      <ul class="featured" aria-label="Our games">
+      <ul class="featured" aria-label="Featured game">
         <li><a href="/games/tunnel-rider/"><img src="/assets/img/tunnel-rider/tunnel-rider-key-art-640.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-key-art-640.webp 640w" sizes="48px" width="640" height="231" alt="" loading="eager" decoding="async"><span><b>Tunnel Rider</b><small>Android &middot; Coming soon to Google Play</small></span><span class="arrow" aria-hidden="true">&rarr;</span></a></li>
-        <li><a href="/games/focus-circles/"><img src="/assets/img/focus-circles/focus-circles-tracking-artwork.svg" alt="" width="48" height="48"><span><b>Focus Circles</b><small>In development</small></span><span class="arrow" aria-hidden="true">&rarr;</span></a></li>
       </ul>
     </div>
 
@@ -197,15 +198,15 @@
       <figure class="c" style="--x:3;--y:4;--w:54;--r:-3deg;--d:1;--t:7s">
         <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-800.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-800.webp 800w" sizes="(max-width: 860px) 50vw, 370px" width="800" height="360" alt="Tunnel Rider in-game screenshot: the rider jumps from a mountain ledge toward a lit tunnel in Alpine Valley" loading="eager" decoding="async"><figcaption class="cap">Alpine Valley <i>&middot; In-game</i></figcaption></span>
       </figure>
-      <figure class="c" style="--x:6;--y:71;--w:50;--r:2deg;--d:3;--t:9s">
+      <figure class="c" style="--x:3;--y:71;--w:50;--r:2deg;--d:3;--t:9s">
         <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-800.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-800.webp 800w" sizes="(max-width: 860px) 46vw, 340px" width="800" height="450" alt="Tunnel Rider artwork of the Neon Night stage: a rider on a neon-lit tunnel platform under a full moon" loading="eager" decoding="async"><figcaption class="cap">Neon Night <i>&middot; Artwork</i></figcaption></span>
       </figure>
       <a class="c c-main" href="/games/tunnel-rider/" style="--x:2;--y:35;--w:96;--r:-2deg;--d:0;--t:10s">
         <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-key-art-960.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-key-art-640.webp 640w, /assets/img/tunnel-rider/tunnel-rider-key-art-960.webp 960w, /assets/img/tunnel-rider/tunnel-rider-key-art-1280.webp 1280w" sizes="(max-width: 860px) 92vw, 640px" width="1280" height="462" alt="Tunnel Rider key art: a rider on a blue dirt bike leaps off a cliff beside the Tunnel Rider logo" loading="eager" decoding="async" fetchpriority="high"><span class="cap">Tunnel Rider <i>&middot; Explore the game</i></span></span>
       </a>
-      <a class="c c-fc" href="/games/focus-circles/" style="--x:62;--y:66;--w:32;--r:-3deg;--d:4;--t:8.5s">
-        <span class="frame"><img src="/assets/img/focus-circles/focus-circles-tracking-artwork.svg" alt="Focus Circles artwork: identical balls shuffle while one target ball is marked with a focus ring" width="400" height="400"><span class="cap"><span class="nm">Focus Circles<br></span><i>In development</i></span></span>
-      </a>
+      <figure class="c" style="--x:53;--y:73;--w:44;--r:-2.5deg;--d:4;--t:8.5s">
+        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-race-mode-800.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-race-mode-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-race-mode-800.webp 800w" sizes="(max-width: 860px) 40vw, 300px" width="800" height="360" alt="Tunnel Rider in-game screenshot: four riders on the start line in race mode" loading="eager" decoding="async"><figcaption class="cap">Race mode <i>&middot; In-game</i></figcaption></span>
+      </figure>
       <span class="coin" aria-hidden="true" style="--x:56;--y:4;--w:7;--d:5"></span>
     </div>
   </div>
@@ -215,7 +216,7 @@
   <div class="wrap">
     <span class="eyebrow reveal">Our games</span>
     <h2 class="h2 reveal" id="games-title">A growing collection of <em>original</em> games.</h2>
-    <p class="lede reveal">Every NewBuddy game is built around one idea you can understand in seconds and keep getting better at.</p>
+    <p class="lede reveal">Every NewBuddy game is built around one idea you can understand in seconds and keep getting better at. More are on the way.</p>
     <div class="games">
       <article class="card game reveal" aria-labelledby="g-tr">
         <a class="art" href="/games/tunnel-rider/" tabindex="-1" aria-hidden="true"><img src="/assets/img/tunnel-rider/tunnel-rider-key-art-960.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-key-art-640.webp 640w, /assets/img/tunnel-rider/tunnel-rider-key-art-960.webp 960w, /assets/img/tunnel-rider/tunnel-rider-key-art-1280.webp 1280w" sizes="(max-width: 860px) 92vw, 680px" width="1280" height="462" alt="" loading="lazy" decoding="async"></a>
@@ -224,15 +225,6 @@
           <h3 id="g-tr" class="tr-name">TUNNEL <span>RIDER</span></h3>
           <p>A 2D side-view motorcycle arcade game. Launch from one mountain tunnel to the next, steer in mid-air, land level and ride through five stages as the speed keeps climbing.</p>
           <div class="btn-row"><a class="btn btn-primary" href="/games/tunnel-rider/">Explore Tunnel Rider</a></div>
-        </div>
-      </article>
-      <article class="card game fc reveal" aria-labelledby="g-fc">
-        <a class="art" href="/games/focus-circles/" tabindex="-1" aria-hidden="true"><img src="/assets/img/focus-circles/focus-circles-tracking-artwork.svg" alt="" width="400" height="400" loading="lazy"></a>
-        <div class="body">
-          <ul class="chips" aria-label="Status"><li class="chip mint">In development</li></ul>
-          <h3 id="g-fc">Focus Circles</h3>
-          <p>A casual tracking game we&rsquo;re working on now. Keep your eye on one ball while the circles shuffle and move, then pick out the one you started with.</p>
-          <div class="btn-row"><a class="btn btn-ghost" href="/games/focus-circles/">About Focus Circles</a></div>
         </div>
       </article>
     </div>
@@ -244,7 +236,7 @@
     <div class="reveal">
       <span class="eyebrow">The studio</span>
       <h2 class="h2" id="studio-title">Your new buddy for a <em>five&#8209;minute</em> break.</h2>
-      <p class="lede">NewBuddy Games is an independent studio making original mobile games. Each one starts from a single idea that&rsquo;s easy to grasp, like jumping the gap or following the ball.</p>
+      <p class="lede">NewBuddy Games is an independent studio making original mobile games. Each one starts from a single idea that&rsquo;s easy to grasp, like timing the jump to the next tunnel.</p>
       <p class="lede">Then we spend our time on the parts you feel: responsive controls, clear feedback and progression that gives you a reason to come back.</p>
     </div>
     <ul class="pillars reveal">
@@ -282,7 +274,6 @@
         <h2 id="f-games">Games</h2>
         <ul>
           <li><a href="/games/tunnel-rider/">Tunnel Rider</a></li>
-          <li><a href="/games/focus-circles/">Focus Circles</a></li>
           <li><a href="/games/">All games</a></li>
         </ul>
       </nav>
