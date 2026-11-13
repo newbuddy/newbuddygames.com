@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://newbuddygames.com/</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://newbuddygames.com/games/</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://newbuddygames.com/games/tunnel-rider/</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://newbuddygames.com/privacy/</loc><lastmod>2026-11-13</lastmod></url>
-  <url><loc>https://newbuddygames.com/games/tunnel-rider/privacy/</loc><lastmod>2026-11-13</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://newbuddygames.com/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-key-art-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-1280.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://newbuddygames.com/games/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://newbuddygames.com/games/tunnel-rider/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-key-art-1600.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-alpine-valley-stage-intro-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-race-mode-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-stage-select-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-garage-bikes-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-garage-upgrades-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-global-rankings-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-main-menu-1280.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-1040.webp</image:loc></image:image>
+    <image:image><image:loc>https://newbuddygames.com/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-1080.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://newbuddygames.com/privacy/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://newbuddygames.com/games/tunnel-rider/privacy/</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
 </urlset>
