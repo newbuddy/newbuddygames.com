@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Circles: Upcoming Tracking Game | NewBuddy Games</title>
+<meta name="description" content="Focus Circles is an upcoming tracking game from NewBuddy Games. Keep your eye on one ball as the circles shuffle, then pick the one you started with.">
+<link rel="canonical" href="https://newbuddygames.com/games/focus-circles/">
+<meta name="theme-color" content="#0E0A26">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewBuddy Games">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Focus Circles: Upcoming Tracking Game | NewBuddy Games">
+<meta property="og:description" content="Focus Circles is an upcoming tracking game from NewBuddy Games. Keep your eye on one ball as the circles shuffle, then pick the one you started with.">
+<meta property="og:url" content="https://newbuddygames.com/games/focus-circles/">
+<meta property="og:image" content="https://newbuddygames.com/assets/img/og/focus-circles-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Focus Circles artwork: identical balls shuffle while one target ball is marked with a focus ring">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Focus Circles: Upcoming Tracking Game | NewBuddy Games">
+<meta name="twitter:description" content="Focus Circles is an upcoming tracking game from NewBuddy Games. Keep your eye on one ball as the circles shuffle, then pick the one you started with.">
+<meta name="twitter:image" content="https://newbuddygames.com/assets/img/og/focus-circles-og.jpg">
+<meta name="twitter:image:alt" content="Focus Circles artwork: identical balls shuffle while one target ball is marked with a focus ring">
+<script>document.documentElement.classList.add("js")</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoGame",
+      "@id": "https://newbuddygames.com/games/focus-circles/#game",
+      "name": "Focus Circles",
+      "url": "https://newbuddygames.com/games/focus-circles/",
+      "description": "An upcoming casual tracking game: keep your eye on one ball as the circles shuffle and move, then pick out the one you started with.",
+      "image": "https://newbuddygames.com/assets/img/og/focus-circles-og.jpg",
+      "genre": [
+        "Casual",
+        "Puzzle"
+      ],
+      "creativeWorkStatus": "In development",
+      "inLanguage": "en",
+      "author": {
+        "@id": "https://newbuddygames.com/#organization"
+      },
+      "publisher": {
+        "@id": "https://newbuddygames.com/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://newbuddygames.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Games",
+          "item": "https://newbuddygames.com/games/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Focus Circles",
+          "item": "https://newbuddygames.com/games/focus-circles/"
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://newbuddygames.com/#organization",
+      "name": "NewBuddy Games",
+      "url": "https://newbuddygames.com/"
+    }
+  ]
+}
+</script>
+<style>
+  body { background: #0E0A26; }
+  .fc-hero { position: relative; overflow: hidden; background: radial-gradient(60vmax 60vmax at 75% 40%, rgba(124, 108, 255, 0.28), transparent 70%); }
+  .fc-hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 64px; align-items: center; padding-top: 40px; padding-bottom: 80px; }
+  @media (max-width: 860px) { .fc-hero .wrap { grid-template-columns: 1fr; } }
+  .fc-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 9vw, 120px); line-height: .92; letter-spacing: -.02em; margin: 18px 0 22px; }
+  .fc-hero h1 em { color: var(--mint); }
+  .fc-hero .lede { color: #D6D0FF; margin-bottom: 28px; }
+  .eyebrow { color: var(--mint); }
+  .btn-mint { background: var(--mint); color: #0E0A26; }
+  .btn-mint:hover { background: #7EF0DA; color: #0E0A26; }
+
+  .demo { position: relative; aspect-ratio: 1; width: 100%; max-width: 520px; justify-self: center; border-radius: 32px; overflow: hidden;
+          background: radial-gradient(circle at 50% 42%, #2B2178, #110C2C 75%); box-shadow: 0 40px 80px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(124,108,255,.3); }
+  .demo svg { width: 100%; height: 100%; }
+  .demo .ring { fill: none; stroke: #7C6CFF; stroke-opacity: .16; stroke-width: 2; }
+  .demo .ball { fill: url(#dball); }
+  .demo .focus { fill: none; stroke: var(--mint); stroke-width: 5; stroke-linecap: round; }
+  .demo figcaption { position: absolute; left: 14px; bottom: 14px; padding: 4px 11px; border-radius: 999px; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(14,10,38,.8); margin: 0; }
+  /* 4 slots on a diamond: N(200,110) E(290,200) S(200,290) W(110,200). Ball A is the target. */
+  @media (prefers-reduced-motion: no-preference) {
+    .b { animation: 9s ease-in-out infinite; }
+    .bA { animation-name: mA; } .bB { animation-name: mB; } .bC { animation-name: mC; } .bD { animation-name: mD; }
+    .focus { animation: show 9s ease-in-out infinite; }
+    @keyframes mA { 0%,18% { translate: 0 0 } 30%,40% { translate: 0 180px } 52%,62% { translate: -90px 90px } 74%,100% { translate: 90px 90px } }
+    @keyframes mC { 0%,18% { translate: 0 0 } 30%,40% { translate: 0 -180px } 52%,62% { translate: 0 -180px } 74%,100% { translate: 0 -180px } }
+    @keyframes mB { 0%,62% { translate: 0 0 } 74%,100% { translate: -180px 0 } }
+    @keyframes mD { 0%,40% { translate: 0 0 } 52%,100% { translate: 90px 90px } }
+    .round { animation: round 9s linear infinite; }
+    @keyframes round { 0% { opacity: 0 } 4%,95% { opacity: 1 } 100% { opacity: 0 } }
+    @keyframes show { 0%,14% { opacity: 1; translate: 0 0 } 18%,84% { opacity: 0; translate: 0 0 } 85% { opacity: 0; translate: 90px 90px } 90%,100% { opacity: 1; translate: 90px 90px } }
+  }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; list-style: none; padding: 0; margin: 32px 0 0; counter-reset: st; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+  .steps li { counter-increment: st; padding: 24px; border-radius: 20px; background: #16113A; border: 1px solid rgba(124,108,255,.25); }
+  .steps li::before { content: counter(st); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--mint); color: #0E0A26; font-weight: 900; margin-bottom: 14px; }
+  .steps h3 { font-size: 19px; margin-bottom: 6px; }
+  .steps p { color: #C9C2F5; }
+  .status { padding: clamp(24px, 4vw, 44px); border-radius: 26px; border: 1px solid rgba(124,108,255,.35); background: linear-gradient(140deg, #1E1752, #0E0A26 70%); }
+  .status .lede { color: #D6D0FF; }
+  .status dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0 0; }
+  @media (max-width: 760px) { .status dl { grid-template-columns: 1fr; } }
+  .status dt { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #A79FE0; }
+  .status dd { margin: 4px 0 0; color: #fff; font-weight: 700; }
+  .status .btn-row { margin-top: 26px; }
+  .h2 em { color: var(--mint); }
+  .site-header { background: rgba(14, 10, 38, .85); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="NewBuddy Games home"><img src="/assets/brand/newbuddy-games-logo.svg" alt="NewBuddy Games" width="201" height="24"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav"><span class="bars" aria-hidden="true"></span>Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/games/">Games</a></li>
+        <li><a href="/games/tunnel-rider/">Tunnel Rider</a></li>
+        <li><a href="/games/focus-circles/" aria-current="page">Focus Circles</a></li>
+        <li><a href="/#studio">Studio</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<nav class="breadcrumb wrap" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/games/">Games</a></li><li><span aria-current="page">Focus Circles</span></li></ol></nav>
+
+<section class="fc-hero" aria-labelledby="title">
+  <div class="wrap">
+    <div>
+      <ul class="chips" aria-label="Status"><li class="chip mint">In development</li></ul>
+      <h1 id="title">Focus <em>Circles</em></h1>
+      <p class="lede">An upcoming casual tracking game from NewBuddy Games. Keep your eye on one ball as the circles shuffle and move, then pick out the one you started with.</p>
+      <div class="btn-row">
+        <a class="btn btn-mint" href="mailto:faisalabb67@gmail.com?subject=Focus%20Circles%20updates">Ask to hear when it launches</a>
+        <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+      </div>
+    </div>
+    <figure class="demo">
+  <svg viewBox="0 0 400 400" role="img" aria-labelledby="demo-t">
+    <title id="demo-t">Concept animation: one marked ball swaps places with three identical balls, then the mark returns to show where the target ended up</title>
+    <defs><radialGradient id="dball" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#DCD6FF"/><stop offset="1" stop-color="#9A8CF0"/></radialGradient></defs>
+    <circle class="ring" cx="200" cy="200" r="150"/><circle class="ring" cx="200" cy="200" r="90"/>
+    <g class="round">
+    <circle class="ball b bA" cx="200" cy="110" r="30"/>
+    <circle class="ball b bB" cx="290" cy="200" r="30"/>
+    <circle class="ball b bC" cx="200" cy="290" r="30"/>
+    <circle class="ball b bD" cx="110" cy="200" r="30"/>
+    <g class="focus"><circle cx="200" cy="110" r="45"/><path d="M200 50v12M200 158v12M140 110h12M248 110h12"/></g>
+    </g>
+  </svg>
+  <figcaption>Concept illustration</figcaption>
+</figure>
+  </div>
+</section>
+
+<section class="section" id="how-it-works" aria-labelledby="h-how">
+  <div class="wrap">
+    <span class="eyebrow reveal">The idea</span>
+    <h2 class="h2 reveal" id="h-how">Watch closely. <em>Don&rsquo;t blink.</em></h2>
+    <p class="lede reveal" style="color:#D6D0FF">Focus Circles is about tracking: a simple test of attention and reflexes that&rsquo;s easy to understand and hard to get perfect.</p>
+    <ol class="steps">
+      <li class="reveal"><h3>Spot the target</h3><p>One ball is marked at the start. Lock your eyes on it.</p></li>
+      <li class="reveal"><h3>Follow the shuffle</h3><p>The mark disappears and the identical balls shuffle and move around.</p></li>
+      <li class="reveal"><h3>Pick it out</h3><p>When they stop, tap the ball you think is your original target.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="status" aria-labelledby="h-status">
+  <div class="wrap">
+    <div class="status reveal">
+      <span class="eyebrow">Development status</span>
+      <h2 class="h2" id="h-status">Coming soon.</h2>
+      <p class="lede">Focus Circles is in development. There is no release date or store page yet. We&rsquo;ll update this page with screenshots and download links when there are.</p>
+      <dl>
+        <div><dt>Status</dt><dd>In development</dd></div>
+        <div><dt>Release date</dt><dd>Not announced</dd></div>
+        <div><dt>Studio</dt><dd>NewBuddy Games</dd></div>
+      </dl>
+      <div class="btn-row"><a class="btn btn-ghost" href="/games/tunnel-rider/">Meanwhile, explore Tunnel Rider</a></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div class="about">
+        <a class="logo" href="/" aria-label="NewBuddy Games home"><img src="/assets/brand/newbuddy-games-logo.svg" alt="NewBuddy Games" width="201" height="24" loading="lazy"></a>
+        <p>Independent mobile games made for quick breaks, satisfying challenges, and one more round.</p>
+      </div>
+      <nav aria-labelledby="f-games">
+        <h2 id="f-games">Games</h2>
+        <ul>
+          <li><a href="/games/tunnel-rider/">Tunnel Rider</a></li>
+          <li><a href="/games/focus-circles/">Focus Circles</a></li>
+          <li><a href="/games/">All games</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-studio">
+        <h2 id="f-studio">Studio</h2>
+        <ul>
+          <li><a href="/#studio">About the studio</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="mailto:faisalabb67@gmail.com">Email us</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="f-legal">
+        <h2 id="f-legal">Legal</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/games/tunnel-rider/privacy/">Tunnel Rider privacy policy</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="legal">&copy; <span data-year>2026</span> NewBuddy Games. All rights reserved.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
