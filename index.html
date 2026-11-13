@@ -80,7 +80,7 @@
   .featured .arrow { color: var(--cyan); font-weight: 800; }
 
   /* collage: art-directed, every card has a fixed slot */
-  .collage { position: relative; aspect-ratio: 1; width: 100%; max-width: 680px; justify-self: end; }
+  .collage { position: relative; aspect-ratio: 1 / 0.9; width: 100%; max-width: 680px; justify-self: end; }
   .c { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); width: calc(var(--w) * 1%); margin: 0; rotate: var(--r, 0deg); display: block; color: inherit; text-decoration: none; }
   .c .frame { display: block; position: relative; border-radius: 20px; overflow: hidden; background: var(--panel);
               box-shadow: 0 28px 60px -12px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.07); transition: box-shadow .3s, scale .3s; }
@@ -112,7 +112,6 @@
     .c .frame { animation: none; }
   }
   @media (max-width: 560px) {
-    figure.c .cap { display: none; }
     .c-fc .cap .nm { display: none; }
   }
 
@@ -192,22 +191,16 @@
     </div>
 
     <div class="collage" role="group" aria-label="Artwork and screenshots from our games">
-      <figure class="c" style="--x:50;--y:13;--w:46;--r:2.5deg;--d:2;--t:8s">
-        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-800.webp 800w" sizes="(max-width: 860px) min(42vw, 240px), 320px" width="800" height="450" alt="Tunnel Rider artwork of the Grand Bridge stage: a rider leaves a steel tunnel onto a red suspension bridge" loading="lazy" decoding="async"><figcaption class="cap top">Grand Bridge <i>&middot; Artwork</i></figcaption></span>
+      <figure class="c" style="--x:40;--y:0;--w:58;--r:2.5deg;--d:1;--t:8s">
+        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-grand-bridge-artwork-800.webp 800w" sizes="(max-width: 860px) min(54vw, 300px), 400px" width="800" height="450" alt="Tunnel Rider artwork of the Grand Bridge stage: a rider leaves a steel tunnel onto a red suspension bridge" loading="lazy" decoding="async"><figcaption class="cap top">Grand Bridge <i>&middot; Artwork</i></figcaption></span>
       </figure>
-      <figure class="c" style="--x:3;--y:4;--w:54;--r:-3deg;--d:1;--t:7s">
-        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-alpine-valley-gameplay-800.webp 800w" sizes="(max-width: 860px) min(50vw, 280px), 370px" width="800" height="360" alt="Tunnel Rider in-game screenshot: the rider jumps from a mountain ledge toward a lit tunnel in Alpine Valley" loading="lazy" decoding="async"><figcaption class="cap">Alpine Valley <i>&middot; In-game</i></figcaption></span>
+      <figure class="c" style="--x:2;--y:64;--w:58;--r:-2deg;--d:2;--t:9s">
+        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-800.webp 800w" sizes="(max-width: 860px) min(54vw, 300px), 400px" width="800" height="450" alt="Tunnel Rider artwork of the Neon Night stage: a rider on a neon-lit tunnel platform under a full moon" loading="lazy" decoding="async"><figcaption class="cap">Neon Night <i>&middot; Artwork</i></figcaption></span>
       </figure>
-      <figure class="c" style="--x:3;--y:71;--w:50;--r:2deg;--d:3;--t:9s">
-        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-neon-night-artwork-800.webp 800w" sizes="(max-width: 860px) min(44vw, 260px), 340px" width="800" height="450" alt="Tunnel Rider artwork of the Neon Night stage: a rider on a neon-lit tunnel platform under a full moon" loading="lazy" decoding="async"><figcaption class="cap">Neon Night <i>&middot; Artwork</i></figcaption></span>
-      </figure>
-      <a class="c c-main" href="/games/tunnel-rider/" style="--x:2;--y:35;--w:96;--r:-2deg;--d:0;--t:10s">
+      <a class="c c-main" href="/games/tunnel-rider/" style="--x:2;--y:28;--w:96;--r:-1.5deg;--d:0;--t:10s">
         <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-key-art-720.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-key-art-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-key-art-720.webp 720w, /assets/img/tunnel-rider/tunnel-rider-key-art-960.webp 960w, /assets/img/tunnel-rider/tunnel-rider-key-art-1280.webp 1280w" sizes="(max-width: 860px) min(88vw, 500px), 640px" width="1280" height="462" alt="Tunnel Rider key art: a rider on a blue dirt bike leaps off a cliff beside the Tunnel Rider logo" loading="eager" decoding="async" fetchpriority="high"><span class="cap">Tunnel Rider <i>&middot; Explore the game</i></span></span>
       </a>
-      <figure class="c" style="--x:53;--y:73;--w:44;--r:-2.5deg;--d:4;--t:8.5s">
-        <span class="frame"><img src="/assets/img/tunnel-rider/tunnel-rider-race-mode-480.webp" srcset="/assets/img/tunnel-rider/tunnel-rider-race-mode-320.webp 320w, /assets/img/tunnel-rider/tunnel-rider-race-mode-480.webp 480w, /assets/img/tunnel-rider/tunnel-rider-race-mode-800.webp 800w" sizes="(max-width: 860px) min(40vw, 230px), 300px" width="800" height="360" alt="Tunnel Rider in-game screenshot: four riders on the start line in race mode" loading="lazy" decoding="async"><figcaption class="cap">Race mode <i>&middot; In-game</i></figcaption></span>
-      </figure>
-      <span class="coin" aria-hidden="true" style="--x:56;--y:4;--w:7;--d:5"></span>
+      <span class="coin" aria-hidden="true" style="--x:33;--y:6;--w:7;--d:3"></span>
     </div>
   </div>
 </section>
