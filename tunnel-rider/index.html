@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tunnel Rider: one bike, endless tunnels</title>
+<meta name="description" content="Tunnel Rider is a motorbike game for Android. Jump between mountain tunnels, control your flight and rotation, and ride further as the speed keeps climbing.">
+<meta name="theme-color" content="#07111F">
+<link rel="canonical" href="https://newbuddygames.com/tunnel-rider/">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewBuddy Games">
+<meta property="og:title" content="Tunnel Rider: one bike, endless tunnels">
+<meta property="og:description" content="Jump between mountain tunnels, control your flight and see how far you can ride.">
+<meta property="og:url" content="https://newbuddygames.com/tunnel-rider/">
+<meta property="og:image" content="https://newbuddygames.com/assets/tr/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,400;0,600;0,800;1,800;1,900&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  body { background: var(--navy); }
+  .tr { font-weight: 900; font-style: italic; letter-spacing: -0.01em; text-transform: uppercase; line-height: 0.95; }
+  .tr span { color: var(--blue); }
+  h2.tr { font-size: clamp(34px, 5vw, 56px); margin: 0 0 16px; }
+  .eyebrow { font-style: italic; }
+
+  /* hero */
+  .hero { position: relative; padding: 0; background: #0E4FB5; }
+  .hero .art { position: relative; aspect-ratio: 1600 / 577; min-height: 260px; max-height: 80vh; width: 100%; overflow: hidden; }
+  .hero .art img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 30%; }
+  .hero .art::after { content: ""; position: absolute; inset: auto 0 0 0; height: 30%; background: linear-gradient(180deg, transparent, var(--navy)); }
+  .intro { position: relative; margin-top: clamp(-90px, -6vw, -24px); z-index: 2; }
+  .intro-card { background: linear-gradient(180deg, rgba(18, 62, 140, 0.92), rgba(7, 17, 31, 0.98)); border: 1.5px solid rgba(92, 203, 255, 0.55);
+                box-shadow: 0 0 40px rgba(46, 184, 255, 0.25); border-radius: 28px; padding: clamp(24px, 4vw, 44px);
+                display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px 48px; align-items: center; }
+  @media (max-width: 860px) { .intro-card { grid-template-columns: 1fr; } }
+  .intro h1 { font-size: clamp(44px, 7vw, 84px); margin: 0; }
+  .tagline { margin: 12px 0 0; color: var(--blue-soft); font-weight: 800; font-style: italic; letter-spacing: 0.32em; font-size: clamp(12px, 1.3vw, 15px); }
+  .intro p.lede { margin-bottom: 22px; }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* feature strip */
+  .features { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 28px; border: 1px solid var(--line); border-radius: 22px; background: rgba(11, 26, 48, 0.7); }
+  .features div { padding: 22px 16px; text-align: center; font-weight: 800; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.25; }
+  .features div + div { border-left: 1px solid var(--line); }
+  .features svg { width: 46px; height: 46px; margin: 0 auto 10px; display: block; color: var(--blue); }
+  @media (max-width: 700px) { .features { grid-template-columns: 1fr 1fr; } .features div:nth-child(3) { border-left: 0; } .features div:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+  /* split rows */
+  .split { display: grid; grid-template-columns: 1fr 1.25fr; gap: 32px 64px; align-items: center; }
+  .split.flip > :first-child { order: 2; }
+  @media (max-width: 900px) { .split, .split.flip { grid-template-columns: 1fr; } .split.flip > :first-child { order: 0; } }
+  .shot { border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(92, 203, 255, 0.4); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5); background: #000; }
+  .shot img { width: 100%; aspect-ratio: 20 / 9; object-fit: cover; }
+  .shot-pair { display: grid; gap: 16px; }
+  .shot-pair .shot:nth-child(2) { width: 82%; justify-self: end; margin-top: -16%; position: relative; }
+
+  /* controls */
+  .controls { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 18px; }
+  .controls li { display: grid; grid-template-columns: 64px 1fr; gap: 2px 18px; align-items: center; }
+  .controls b { font-size: 19px; font-style: italic; font-weight: 900; text-transform: uppercase; }
+  .controls li > span:not(.pad) { grid-column: 2; color: var(--blue-soft); }
+  .pad { grid-row: span 2; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; color: #fff;
+         box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25) inset, 0 0 18px var(--glow); background: radial-gradient(circle at 50% 35%, var(--c1), var(--c2)); }
+  .pad svg { width: 30px; height: 30px; }
+  .pad.jump { --c1: #3FA9FF; --c2: #0B4FB0; --glow: rgba(46, 184, 255, 0.6); }
+  .pad.turbo { --c1: #3BD97A; --c2: #0E7A3A; --glow: rgba(59, 217, 122, 0.5); }
+  .pad.flip { --c1: #9B6BFF; --c2: #4A1FA8; --glow: rgba(155, 107, 255, 0.55); }
+
+  /* stages */
+  .stages { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 10px; counter-reset: s; }
+  .stages li { counter-increment: s; display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 14px; background: rgba(11, 26, 48, 0.8); border: 1px solid var(--line);
+               font-weight: 900; font-style: italic; font-size: 20px; }
+  .stages li::before { content: "STAGE " counter(s); font-size: 12px; letter-spacing: 0.06em; padding: 4px 9px; border-radius: 7px; background: #1E5BD6; border: 1px solid #5CCBFF; font-style: italic; }
+  .stages li:first-child::before { background: #C46A00; border-color: #FFD27A; }
+  .stages li em { margin-left: auto; font-style: normal; font-weight: 600; font-size: 13px; color: var(--muted); }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 22px; color: var(--blue-soft); font-size: 15px; }
+  .facts b { color: var(--gold); font-style: italic; font-weight: 900; font-size: 22px; margin-right: 6px; }
+
+  /* upgrades */
+  .upgrades { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+  .upgrades div { padding: 16px; border-radius: 16px; background: rgba(11, 26, 48, 0.8); border: 1px solid var(--line); }
+  .upgrades b { display: block; font-size: 17px; margin-bottom: 2px; }
+  .upgrades span { color: var(--muted); font-size: 14px; line-height: 1.4; display: block; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .chips span { padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 800; border: 1px solid var(--line); background: rgba(11, 26, 48, 0.8); display: inline-flex; align-items: center; gap: 7px; }
+  .chips i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+
+  /* online cards */
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+  @media (max-width: 900px) { .trio { grid-template-columns: 1fr; } }
+  .trio article { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+  .trio img { aspect-ratio: 16 / 9; width: 100%; object-fit: cover; }
+  .trio .pad-in { padding: 20px 22px 24px; }
+  .trio h3 { margin: 0 0 6px; font-size: 22px; font-weight: 900; font-style: italic; text-transform: uppercase; }
+  .trio p { margin: 0; color: var(--blue-soft); }
+
+  /* worlds gallery */
+  .rail { display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 760px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+          padding: 8px var(--gutter) 22px; scrollbar-width: thin; scrollbar-color: #1E5BD6 transparent; overscroll-behavior-x: contain; }
+  .rail figure { margin: 0; scroll-snap-align: center; }
+  .rail img { border-radius: 20px; aspect-ratio: 16 / 9; width: 100%; object-fit: cover; border: 1px solid var(--line); }
+  .rail figcaption { color: var(--muted); font-size: 14px; margin-top: 10px; }
+
+  /* final cta */
+  .final { position: relative; overflow: hidden; text-align: center; padding: clamp(90px, 14vw, 170px) 0; }
+  .final > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+  .final::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, var(--navy), rgba(7, 17, 31, 0.2) 40%, rgba(7, 17, 31, 0.3) 70%, var(--navy)); z-index: 1; }
+  .final .wrap { position: relative; z-index: 2; display: grid; justify-items: center; gap: 18px; }
+  .final h2 { font-size: clamp(44px, 8vw, 96px); margin: 0; text-shadow: 0 6px 30px rgba(0, 0, 0, 0.6); }
+</style>
+</head>
+<body>
+
+<header class="site-header solid">
+  <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="/#games">All games</a>
+    <a href="/focus-circles/">Focus Circles</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="art"><img src="/assets/tr/hero.webp" alt="A rider in white and blue gear jumps a blue dirt bike off a mountain cliff toward a lit tunnel" width="1600" height="577" fetchpriority="high"></div>
+  </section>
+
+  <div class="intro">
+    <div class="wrap">
+      <div class="intro-card">
+        <div>
+          <h1 class="tr">Tunnel <span>Rider</span></h1>
+          <p class="tagline">ONE BIKE. ENDLESS TUNNELS.</p>
+        </div>
+        <div>
+          <p class="lede">Ride through mountain tunnels, launch from one to the next, and control your bike in the air. The next opening could be level, higher or lower. The longer you survive, the faster you go.</p>
+          <div class="ctas">
+            <!-- Swap this for the Google Play link once the game is live:
+                 <a class="btn" href="https://play.google.com/store/apps/details?id=com.newbuddy.tunnelrider">Get it on Google Play</a> -->
+            <span class="btn">Coming soon to Google Play</span>
+            <a class="btn ghost" href="#worlds">See the worlds</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="features reveal" role="list">
+        <div role="listitem"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M8 34a16 16 0 1 1 32 0"/><path d="M24 34l9-11"/><circle cx="24" cy="34" r="2.5" fill="currentColor"/></svg>Increase speed</div>
+        <div role="listitem"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><path d="M4 40l14-24 7 10 6-8 13 22z"/><path d="M14 40v-6a4 4 0 0 1 8 0v6M28 40v-5a3.5 3.5 0 0 1 7 0v5"/></svg>Jump between tunnels</div>
+        <div role="listitem"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M38 24a14 14 0 0 1-24 10"/><path d="M10 24a14 14 0 0 1 24-10"/><path d="M34 6v8h-8M14 42v-8h8"/></svg>Control flight &amp; rotation</div>
+        <div role="listitem"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3"><circle cx="22" cy="26" r="16"/><circle cx="22" cy="26" r="9"/><circle cx="22" cy="26" r="2.5" fill="currentColor"/><path d="M22 26L40 8M34 8h6v6" stroke-linecap="round"/></svg>Reach further, score higher</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="ride">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">How to ride</p>
+        <h2 class="tr">Three buttons. <span>Total control.</span></h2>
+        <p class="lede">The bike always moves forward. You decide when to leave the tunnel, how high to fly and how to land.</p>
+        <ul class="controls">
+          <li><span class="pad jump" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l7-7 7 7M5 20l7-7 7 7"/></svg></span><b>Jump</b><span>Tap at the tunnel edge to launch. Hold to stay in the air longer.</span></li>
+          <li><span class="pad turbo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L5 14h6l-1 8 8-12h-6z"/></svg></span><b>Turbo</b><span>Hold for a burst of speed when you need to clear a long gap.</span></li>
+          <li><span class="pad flip" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M19 12a7 7 0 1 1-2.1-5"/><path d="M19 4v4h-4"/></svg></span><b>Flip</b><span>Hold to rotate the bike in mid‑air. Land level to keep riding.</span></li>
+        </ul>
+      </div>
+      <div class="shot-pair reveal">
+        <div class="shot"><img src="/assets/tr/01-jump.webp" alt="In-game: the rider jumps from a mountain ledge toward a lit tunnel, with score, distance and speed shown at the top" width="1280" height="576" loading="lazy"></div>
+        <div class="shot"><img src="/assets/tr/08-stage-intro.webp" alt="In-game: the Alpine Valley stage intro banner" width="1280" height="576" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stages" style="padding-top:0">
+    <div class="wrap split flip">
+      <div class="reveal">
+        <p class="eyebrow">Stages</p>
+        <h2 class="tr">Five worlds <span>to master</span></h2>
+        <p class="lede">Every 2,000 metres the scenery changes and the tunnels get trickier. Earn up to three stars on each stage.</p>
+        <ol class="stages">
+          <li>Alpine Valley</li>
+          <li>Grand Bridge</li>
+          <li>Neon Night</li>
+          <li>Sunset Pass</li>
+          <li>Frozen Peaks</li>
+        </ol>
+        <div class="facts"><span><b>5</b>stages</span><span><b>15</b>stars to earn</span><span><b>2,000&nbsp;m</b>per stage</span></div>
+      </div>
+      <div class="reveal"><div class="shot"><img src="/assets/tr/04-stages.webp" alt="Stage select screen showing Alpine Valley, Grand Bridge, Neon Night, Sunset Pass and Frozen Peaks" width="1280" height="576" loading="lazy"></div></div>
+    </div>
+  </section>
+
+  <section id="garage" style="padding-top:0">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Garage</p>
+        <h2 class="tr">Build <span>your ride</span></h2>
+        <p class="lede">Collect coins on every run and spend them on new bikes, paint jobs and upgrades that change how you fly.</p>
+        <div class="upgrades">
+          <div><b>Coin Magnet</b><span>Pulls nearby coins into your path.</span></div>
+          <div><b>Glide</b><span>Stronger hover while you hold jump.</span></div>
+          <div><b>Suspension</b><span>Survive steeper, sloppier landings.</span></div>
+          <div><b>Lucky Coins</b><span>Every coin has a chance to count double.</span></div>
+        </div>
+        <div class="chips" aria-label="Bike styles">
+          <span><i style="--c:#E53935"></i>Rally Red</span>
+          <span><i style="--c:#39E06B"></i>Venom Green</span>
+          <span><i style="--c:#9B6BFF"></i>Neon Violet</span>
+          <span><i style="--c:#7FD0FF"></i>Glacier Blue</span>
+          <span><i style="--c:#E8B04A"></i>Desert Gold</span>
+          <span><i style="--c:#3A4150"></i>Stealth</span>
+        </div>
+      </div>
+      <div class="shot-pair reveal">
+        <div class="shot"><img src="/assets/tr/05-garage-bikes.webp" alt="Garage screen showing the Venom Green bike on a display stand" width="1280" height="576" loading="lazy"></div>
+        <div class="shot"><img src="/assets/tr/06-garage-upgrades.webp" alt="Garage upgrades: Coin Magnet, Glide, Suspension and Lucky Coins" width="1280" height="576" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compete" style="padding-top:0">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Compete</p>
+        <h2 class="tr">Ride against <span>the world</span></h2>
+      </div>
+      <div class="trio">
+        <article class="reveal">
+          <img src="/assets/tr/02-race.webp" alt="Race mode: four riders lined up at the start of Alpine Valley" width="1280" height="576" loading="lazy">
+          <div class="pad-in"><h3>Race</h3><p>Line up against three other riders and fight for first place.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/tr/07-rankings.webp" alt="Global Rider Rankings with a podium and country standings" width="1280" height="576" loading="lazy">
+          <div class="pad-in"><h3>Global rankings</h3><p>Pick a rider name and a country, then climb the board by distance or by stages.</p></div>
+        </article>
+        <article class="reveal">
+          <img src="/assets/tr/03-title.webp" alt="Tunnel Rider main menu with Play and Race buttons" width="1280" height="576" loading="lazy">
+          <div class="pad-in"><h3>Challenge a friend</h3><p>Share a link with your score. Your friend rides the same stage and tries to beat it.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="worlds" style="padding-top:0">
+    <div class="wrap reveal">
+      <p class="eyebrow">Worlds</p>
+      <h2 class="tr">Mountains, bridges <span>and neon nights</span></h2>
+    </div>
+    <div class="rail" tabindex="0" aria-label="Tunnel Rider artwork, scroll sideways">
+      <figure><img src="/assets/tr/title-art.webp" alt="A rider waits on a cliff edge above a mountain valley, facing a glowing tunnel" width="1600" height="900" loading="lazy"><figcaption>Alpine Valley</figcaption></figure>
+      <figure><img src="/assets/tr/bridge-art.webp" alt="A rider exits a steel tunnel onto a red suspension bridge with a city behind" width="1600" height="900" loading="lazy"><figcaption>Grand Bridge</figcaption></figure>
+      <figure><img src="/assets/tr/night-art.webp" alt="A rider under a full moon between two neon-lit tunnel platforms" width="1600" height="900" loading="lazy"><figcaption>Neon Night</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="final">
+    <img src="/assets/tr/night-art.webp" alt="" width="1600" height="900" loading="lazy">
+    <div class="wrap">
+      <h2 class="tr">Ready to <span>ride?</span></h2>
+      <p class="tagline">ONE BIKE. ENDLESS FUN.</p>
+      <span class="btn">Coming soon to Google Play</span>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/focus-circles/">Focus Circles</a>
+      <a href="https://newbuddy.github.io/privacy/">Tunnel Rider privacy policy</a>
+      <a href="mailto:faisalabb67@gmail.com">Contact</a>
+    </nav>
+    <small>&copy; <span id="year">2026</span> NewBuddy Games</small>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

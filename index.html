@@ -1,12 +1,206 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NewBuddy Games</title>
+<title>NewBuddy Games: small games, big feel</title>
+<meta name="description" content="NewBuddy Games is an independent studio making mobile games. Home of Tunnel Rider, with Focus Circles coming soon.">
+<meta name="theme-color" content="#050B14">
+<link rel="canonical" href="https://newbuddygames.com/">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewBuddy Games">
+<meta property="og:title" content="NewBuddy Games">
+<meta property="og:description" content="Small games. Big feel. Home of Tunnel Rider.">
+<meta property="og:url" content="https://newbuddygames.com/">
+<meta property="og:image" content="https://newbuddygames.com/assets/tr/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,400;0,600;0,800;1,800;1,900&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* ---------- hero ---------- */
+  .hero { position: relative; min-height: max(100vh, 680px); display: flex; align-items: center; overflow: hidden;
+          background: radial-gradient(60vw 60vw at 78% 50%, rgba(18, 62, 134, 0.55), transparent 70%), var(--bg); }
+  .hero-copy { position: relative; z-index: 5; padding: 120px var(--gutter) 120px calc(var(--gutter) + 3vw); max-width: 720px; }
+  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 8.6vw, 132px); line-height: 0.92; letter-spacing: -0.02em; margin: 0 0 40px;
+             text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); }
+  .hero h1 em { color: var(--blue); }
+  .hero-foot { position: absolute; z-index: 6; left: var(--gutter); bottom: 22px; display: flex; flex-direction: row-reverse; align-items: center; gap: 16px; font-size: 13px; }
+  .hero-foot nav { display: flex; gap: 18px; }
+  .hero-foot a { text-decoration: none; opacity: 0.85; }
+  .hero-foot small { color: var(--muted); font-size: 11px; }
+
+  /* ---------- collage ---------- */
+  .collage { position: absolute; z-index: 1; top: 50%; right: -7vw; width: min(62vw, 100vh, 1040px); aspect-ratio: 1; transform: translateY(-50%); }
+  .collage .drift { position: absolute; inset: 0; animation: drift 14s ease-in-out infinite alternate; }
+  @keyframes drift { from { transform: translate(0, 0) rotate(0); } to { transform: translate(-1.2%, 1%) rotate(-1deg); } }
+  .tile { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); width: calc(var(--s) * 1%); aspect-ratio: 1;
+          border-radius: 22%; overflow: hidden; display: block; background: var(--panel);
+          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+          transform: rotate(calc(var(--r, 0) * 1deg)); transition: transform 0.35s cubic-bezier(.2,.8,.2,1.2), box-shadow 0.35s;
+          animation: pop 0.8s cubic-bezier(.2,.8,.2,1.15) backwards; animation-delay: calc(var(--d, 0) * 60ms + 150ms); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile:hover, .tile:focus-visible { transform: rotate(0) scale(1.08); z-index: 10; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 0 2px var(--blue); }
+  @keyframes pop { from { opacity: 0; transform: translateY(30px) scale(0.7) rotate(calc(var(--r, 0) * 1deg)); } to { opacity: 1; } }
+  .tile.coin { background: linear-gradient(160deg, #FFE27A, #FFB21E 60%, #E58A00); display: grid; place-items: center; }
+  .tile.coin::before { content: ""; width: 56%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFF3B0, #FFC93C 45%, #D98200); box-shadow: 0 0 0 5px rgba(255,255,255,.35) inset, 0 6px 14px rgba(120,60,0,.4); }
+  .tile.chev { background: linear-gradient(160deg, #1B4FA8, #0A2456); display: grid; place-items: center; color: var(--blue); font: italic 900 clamp(20px, 3.4vw, 54px)/1 var(--sans); letter-spacing: -0.08em; }
+  .tile.mark { background: var(--navy); padding: 16%; }
+  .tile .tag { position: absolute; left: 8%; bottom: 8%; padding: 3px 9px; border-radius: 999px; font-size: clamp(9px, 0.85vw, 12px); font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+               color: #120E2E; background: #39E0C1; }
+
+  @media (max-width: 900px) {
+    .hero { flex-direction: column; align-items: stretch; min-height: 0; padding-bottom: 70px; }
+    .hero-copy { padding: 104px var(--gutter) 8px; }
+    .collage { position: relative; top: auto; right: auto; transform: none; width: 132vw; margin: 8px 0 0 -10vw; }
+    .hero { padding-bottom: 28px !important; }
+    .hero-foot { position: relative; left: auto; bottom: auto; justify-content: flex-end; padding: 16px var(--gutter) 0; }
+  }
+
+  /* ---------- games ---------- */
+  .games-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; margin-top: 44px; }
+  @media (max-width: 860px) { .games-grid { grid-template-columns: 1fr; } }
+  .game-card { position: relative; display: flex; flex-direction: column; border-radius: 26px; overflow: hidden; text-decoration: none; background: var(--panel);
+               border: 1px solid var(--line); transition: transform 0.3s, border-color 0.3s; }
+  .game-card:hover { transform: translateY(-4px); border-color: rgba(46, 184, 255, 0.6); }
+  .game-card .art { aspect-ratio: 2 / 1; overflow: hidden; }
+  .game-card .art img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+  .game-card:hover .art img { transform: scale(1.04); }
+  .game-card .body { padding: 24px 26px 28px; display: grid; gap: 10px; flex: 1; align-content: start; }
+  .game-card h3 { margin: 0; font-size: 30px; line-height: 1; font-weight: 900; font-style: italic; letter-spacing: -0.01em; }
+  .game-card p { margin: 0; color: var(--blue-soft); }
+  .game-card .go { margin-top: 8px; font-weight: 800; }
+  .badge { justify-self: start; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+  .badge.gold { color: #2A1600; background: linear-gradient(180deg, var(--gold-hi), var(--gold)); }
+  .badge.mint { color: #120E2E; background: #39E0C1; }
+  .tr-title span { color: var(--blue); }
+  .fc-card { background: #120E2E; border-color: rgba(124, 108, 255, 0.35); }
+  .fc-card:hover { border-color: #7C6CFF; }
+  .fc-card .art { aspect-ratio: auto; height: 100%; min-height: 220px; max-height: 330px; }
+  @media (min-width: 861px) { .fc-card .art { aspect-ratio: 1.35 / 1; max-height: none; height: auto; } }
+
+  /* ---------- studio ---------- */
+  .studio { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; align-items: start; }
+  @media (max-width: 860px) { .studio { grid-template-columns: 1fr; } }
+  .principles { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .principles li { padding: 20px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 48px 1fr; gap: 4px 12px; }
+  .principles li:last-child { border-bottom: 1px solid var(--line); }
+  .principles b { font-size: 18px; }
+  .principles span { grid-column: 2; color: var(--muted); }
+  .principles i { font-family: var(--serif); font-size: 28px; color: var(--blue); font-style: italic; line-height: 1; grid-row: span 2; }
+</style>
 </head>
 <body>
-  <h1>NewBuddy Games</h1>
-  <p>Coming soon.</p>
+
+<header class="site-header">
+  <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+  <nav class="nav" aria-label="Main">
+    <a href="/tunnel-rider/">Tunnel Rider</a>
+    <a class="hide-sm" href="/focus-circles/">Focus Circles</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <div class="hero-copy">
+      <h1>Small games.<br><em>Big</em> feel.</h1>
+      <ul class="arrow-list">
+        <li><a href="/tunnel-rider/">Tunnel Rider <span>Android</span></a></li>
+        <li><a href="/focus-circles/">Focus Circles <span>Coming soon</span></a></li>
+        <li><a href="#studio">The studio</a></li>
+        <li><a href="mailto:faisalabb67@gmail.com">Say hello</a></li>
+      </ul>
+    </div>
+
+    <div class="collage" aria-label="Game art">
+      <div class="drift">
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:43;--y:5;--s:14;--r:4;--d:15"><img src="/assets/tiles/gate.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:4;--y:28;--s:13;--r:-5;--d:12"><img src="/assets/tiles/city-rider.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:20;--y:13;--s:17;--r:-3;--d:6"><img src="/assets/tiles/garage.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:30;--y:6;--s:15;--r:3;--d:9"><img src="/assets/tiles/night-rider.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:59;--y:14;--s:19;--r:-2;--d:4"><img src="/assets/tiles/moon.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:77;--y:24;--s:16;--r:5;--d:8"><img src="/assets/tiles/bridge.webp" alt="" width="480" height="480"></a>
+        <span class="tile chev" aria-hidden="true" style="--x:76;--y:9;--s:13;--r:-4;--d:13">&rsaquo;&rsaquo;&rsaquo;</span>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:8;--y:43;--s:24;--r:-3;--d:2"><img src="/assets/tiles/rider.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:16;--y:66;--s:17;--r:4;--d:10"><img src="/assets/tiles/cliff.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:38;--y:58;--s:19;--r:-2;--d:5"><img src="/assets/tiles/tunnel.webp" alt="" width="480" height="480"></a>
+        <span class="tile coin" aria-hidden="true" style="--x:3;--y:66;--s:11;--r:6;--d:16"></span>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:57;--y:72;--s:16;--r:3;--d:11"><img src="/assets/tiles/podium.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:81;--y:58;--s:15;--r:-4;--d:7"><img src="/assets/tiles/jump.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/tunnel-rider/" style="--x:32;--y:83;--s:14;--r:-5;--d:14"><img src="/assets/tiles/menu-rider.webp" alt="" width="480" height="480"></a>
+        <a class="tile" tabindex="-1" aria-hidden="true" href="/focus-circles/" style="--x:73;--y:79;--s:13;--r:6;--d:17"><img src="/assets/focus-rings.svg" alt="" width="200" height="200"></a>
+        <span class="tile mark" aria-hidden="true" style="--x:88;--y:42;--s:12;--r:-6;--d:18"><img src="/assets/mark.svg" alt="" width="64" height="64"></span>
+        <a class="tile" href="/tunnel-rider/" aria-label="Tunnel Rider" style="--x:33;--y:28;--s:27;--r:-2;--d:0"><img src="/assets/tiles/logo.webp" alt="" width="480" height="480"></a>
+        <a class="tile" href="/focus-circles/" aria-label="Focus Circles, coming soon" style="--x:60;--y:38;--s:22;--r:3;--d:3"><img src="/assets/focus-rings.svg" alt="" width="200" height="200"><span class="tag">Soon</span></a>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <small>&copy; <span id="year">2026</span> NewBuddy Games</small>
+      <nav aria-label="Legal">
+        <a href="https://newbuddy.github.io/privacy/">Privacy</a>
+        <a href="mailto:faisalabb67@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <p class="eyebrow reveal">Our games</p>
+      <h2 class="serif reveal">Quick to learn. Hard to put down.</h2>
+      <div class="games-grid">
+        <a class="game-card reveal" href="/tunnel-rider/">
+          <div class="art"><img src="/assets/tr/key-art.webp" alt="Tunnel Rider key art: a rider on a blue dirt bike jumping off a cliff toward a mountain tunnel" width="1600" height="800" loading="lazy"></div>
+          <div class="body">
+            <span class="badge gold">Coming soon to Google Play</span>
+            <h3 class="tr-title">TUNNEL <span>RIDER</span></h3>
+            <p>One bike. Endless tunnels. Launch from one tunnel to the next, steer your flight, land level, and see how far you can go as the speed keeps climbing.</p>
+            <span class="go">Explore Tunnel Rider &rarr;</span>
+          </div>
+        </a>
+        <a class="game-card fc-card reveal" href="/focus-circles/">
+          <div class="art"><img src="/assets/focus-rings.svg" alt="Focus Circles teaser art: three glowing concentric rings" width="200" height="200" loading="lazy"></div>
+          <div class="body">
+            <span class="badge mint">In development</span>
+            <h3>Focus Circles</h3>
+            <p>Our next game is on the way. A first look is coming soon.</p>
+            <span class="go">First look &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio" style="padding-top:0">
+    <div class="wrap studio">
+      <div class="reveal">
+        <p class="eyebrow">The studio</p>
+        <h2 class="serif">Your new buddy for a <em>five‑minute</em> break.</h2>
+        <p class="lede">NewBuddy Games is a small independent studio making mobile games. We build around one simple idea per game, tune it until it feels great in the hand, and give you a reason to try one more run.</p>
+      </div>
+      <ul class="principles reveal">
+        <li><i>01</i><b>Simple controls</b><span>Learn it in a few seconds. No tutorials that outstay their welcome.</span></li>
+        <li><i>02</i><b>Short, sharp sessions</b><span>Play in a queue, on a bus, or between meetings.</span></li>
+        <li><i>03</i><b>Depth that grows</b><span>Every run teaches you something, and the next one goes further.</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+    <nav aria-label="Footer">
+      <a href="/tunnel-rider/">Tunnel Rider</a>
+      <a href="/focus-circles/">Focus Circles</a>
+      <a href="https://newbuddy.github.io/privacy/">Privacy</a>
+      <a href="mailto:faisalabb67@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>

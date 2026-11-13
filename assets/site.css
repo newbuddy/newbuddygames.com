@@ -1,0 +1,92 @@
+/* NewBuddy Games — shared styles */
+:root {
+  --bg: #050B14;
+  --navy: #07111F;
+  --panel: #0B1A30;
+  --deep: #123E86;
+  --blue: #2EB8FF;
+  --blue-soft: #BFE4FF;
+  --gold: #FFB21E;
+  --gold-hi: #FFE27A;
+  --ink: #FFFFFF;
+  --muted: #9FB4CC;
+  --line: rgba(127, 196, 255, 0.18);
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: absolute; inset: 0 0 auto 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 22px var(--gutter);
+}
+.site-header.solid { position: sticky; top: 0; background: rgba(5, 11, 20, 0.82); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); padding-block: 14px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: -0.01em; text-decoration: none; white-space: nowrap; }
+.brand img { width: 30px; height: 30px; border-radius: 8px; }
+.brand b { color: var(--blue); font-weight: 800; }
+.nav { display: flex; gap: clamp(14px, 2.5vw, 28px); font-size: 15px; }
+.nav a { text-decoration: none; opacity: 0.86; white-space: nowrap; }
+.nav a:hover { opacity: 1; }
+.nav a::after { content: " →"; }
+@media (max-width: 560px) { .nav .hide-sm { display: none; } }
+
+/* ---------- arrow link list (Frosty-style) ---------- */
+.arrow-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; font-size: 16px; }
+.arrow-list a { text-decoration: none; display: inline-flex; gap: 10px; align-items: baseline; }
+.arrow-list a span { color: var(--muted); font-size: 14px; }
+.arrow-list a::after { content: "→"; transition: transform 0.2s; }
+.arrow-list a:hover::after { transform: translateX(4px); }
+.arrow-list a:hover { color: var(--blue-soft); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 14px;
+  font-weight: 900; font-style: italic; font-size: 17px; text-decoration: none; letter-spacing: 0.01em;
+  color: #2A1600; background: linear-gradient(180deg, var(--gold-hi), var(--gold));
+  box-shadow: 0 0 22px rgba(255, 178, 30, 0.45); border: 0;
+}
+.btn.ghost { color: var(--ink); background: rgba(10, 40, 96, 0.6); border: 1.5px solid rgba(92, 203, 255, 0.7); box-shadow: none; }
+.btn small { font-weight: 600; font-style: normal; font-size: 13px; opacity: 0.75; }
+
+/* ---------- sections ---------- */
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
+section { padding: clamp(56px, 9vw, 112px) 0; }
+.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); margin: 0 0 14px; }
+.serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+h2.serif { font-size: clamp(36px, 5.5vw, 64px); line-height: 1.02; margin: 0 0 18px; }
+.lede { font-size: clamp(17px, 1.6vw, 19px); color: var(--blue-soft); max-width: 60ch; margin: 0; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 28px 0 36px; font-size: 14px; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; align-items: center; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.site-footer a { text-decoration: none; color: var(--ink); opacity: 0.85; }
+.site-footer a:hover { opacity: 1; }
+.site-footer small { font-size: 12px; }
+
+/* ---------- reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+@media (max-width: 420px) {
+  .brand { font-size: 16px; gap: 8px; }
+  .brand img { width: 26px; height: 26px; }
+  .nav { font-size: 14px; }
+}

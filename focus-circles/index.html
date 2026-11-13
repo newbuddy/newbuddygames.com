@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Circles: coming soon from NewBuddy Games</title>
+<meta name="description" content="Focus Circles is the next game from NewBuddy Games. Coming soon.">
+<meta name="theme-color" content="#120E2E">
+<link rel="canonical" href="https://newbuddygames.com/focus-circles/">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NewBuddy Games">
+<meta property="og:title" content="Focus Circles: coming soon">
+<meta property="og:description" content="The next game from NewBuddy Games.">
+<meta property="og:url" content="https://newbuddygames.com/focus-circles/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,wght@0,400;0,600;0,800;1,800;1,900&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  :root { --fc-bg: #120E2E; --violet: #7C6CFF; --mint: #39E0C1; --coral: #FF7A9C; }
+  body { background: var(--fc-bg); }
+  .site-header.solid { background: rgba(18, 14, 46, 0.8); border-color: rgba(124, 108, 255, 0.2); }
+  .brand b { color: var(--mint); }
+  .stage { position: relative; min-height: calc(100vh - 62px); display: grid; place-items: center; overflow: hidden; padding: 48px var(--gutter) 64px;
+           background: radial-gradient(70vmin 70vmin at 50% 45%, rgba(124, 108, 255, 0.28), transparent 70%); }
+  .rings { position: absolute; left: 50%; top: 45%; width: min(118vmin, 980px); aspect-ratio: 1; transform: translate(-50%, -50%); pointer-events: none; }
+  .rings circle { fill: none; stroke-linecap: round; transform-origin: 300px 300px; }
+  .rings .track { stroke-width: 2; opacity: 0.22; }
+  .rings .arc { stroke-width: 7; filter: drop-shadow(0 0 10px currentColor); }
+  .r1 { color: var(--violet); stroke: var(--violet); animation: spin 22s linear infinite; }
+  .r2 { color: var(--mint); stroke: var(--mint); animation: spin 15s linear infinite reverse; }
+  .r3 { color: var(--coral); stroke: var(--coral); animation: spin 9s linear infinite; }
+  .core { fill: #fff; animation: breathe 4s ease-in-out infinite; transform-origin: 300px 300px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes breathe { 50% { transform: scale(1.18); } }
+  .copy { position: relative; z-index: 2; text-align: center; display: grid; justify-items: center; gap: 18px; margin-top: 34vmin; }
+  .badge { padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--fc-bg); background: var(--mint); }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(60px, 11vw, 150px); line-height: 0.9; letter-spacing: -0.02em; margin: 0; text-shadow: 0 6px 40px rgba(18, 14, 46, 0.9); }
+  h1 em { color: var(--mint); }
+  .copy p { margin: 0; max-width: 46ch; color: #D6D0FF; font-size: clamp(17px, 1.8vw, 20px); }
+  .copy .arrow-list { margin-top: 10px; justify-items: center; }
+  .copy .arrow-list a:hover { color: var(--mint); }
+  .site-footer { border-color: rgba(124, 108, 255, 0.2); }
+  @media (max-width: 600px) { .rings { opacity: 0.6; } .copy p { text-shadow: 0 2px 12px var(--fc-bg); } }
+</style>
+</head>
+<body>
+
+<header class="site-header solid">
+  <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+  <nav class="nav" aria-label="Main">
+    <a class="hide-sm" href="/#games">All games</a>
+    <a href="/tunnel-rider/">Tunnel Rider</a>
+  </nav>
+</header>
+
+<main class="stage">
+  <svg class="rings" viewBox="0 0 600 600" aria-hidden="true">
+    <circle class="track r1" cx="300" cy="300" r="250"/>
+    <circle class="arc r1" cx="300" cy="300" r="250" stroke-dasharray="380 1191"/>
+    <circle class="track r2" cx="300" cy="300" r="180"/>
+    <circle class="arc r2" cx="300" cy="300" r="180" stroke-dasharray="260 871"/>
+    <circle class="track r3" cx="300" cy="300" r="110"/>
+    <circle class="arc r3" cx="300" cy="300" r="110" stroke-dasharray="170 521"/>
+    <circle class="core" cx="300" cy="300" r="26"/>
+  </svg>
+
+  <div class="copy">
+    <span class="badge">Coming soon</span>
+    <h1>Focus <em>Circles</em></h1>
+    <!-- Replace with the real pitch once the game is announced. -->
+    <p>The next game from NewBuddy Games is taking shape. A first look is on the way.</p>
+    <ul class="arrow-list">
+      <li><a href="mailto:faisalabb67@gmail.com?subject=Focus%20Circles">Tell me when it launches</a></li>
+      <li><a href="/tunnel-rider/">Meanwhile, play Tunnel Rider</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/mark.svg" alt="" width="30" height="30">NewBuddy<b>Games</b></a>
+    <small>&copy; <span id="year">2026</span> NewBuddy Games</small>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
